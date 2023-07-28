@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+:root{
+  /* background-colors */
+  --bg-main: rgb(55,125,189);
+  --bg-secondary: rgb(94,134,35);
+  --bg-white: white;
+
+  /* font-colors */
+  --font-main: rgb(245,210,8);
+  --font-bg-main: rgb(55,125,189);
+  --font-white: white;
+
+  /* box shodow */
+  --box-shadow-main: 0 0 1rem rgba(0, 0, 0, 0.5); 
+}
+
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+body,
+html{
+  font-family: "Orbitron"; 
+  letter-spacing: 4px ;
+  min-height:100vh;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container,
+.container-two,
+.container-three {
+  background: var(--bg-main);
+  color: var(--font-white);
+  position: relative;
+  padding: 1rem;
+}
+
+.container{
+  background: var(--bg-secondary) ;
+}
+
+.container-two {
+  background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-main) 80%
+  ) ;
+}
+
+/* .container-three {
+  background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-main) 40%, var(--bg-main) 60%, var(--bg-secondary)) ;
+} */
+
+.container-three {
+  background: linear-gradient(to top, var(--bg-secondary), var(--bg-main) 80%
+  ) ;
+}
+
+.bgimg-one {
+  background-image: url("./images/20210718_111755.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-one.bottom-triangle {
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 20% 100%, 0 100%);
+}
+
+.bgimg-one.picture-left {
+  clip-path: polygon(0 0, 20% 0, 50% 50%, 20% 100%, 0 100%);
+}
+
+.bgimg-one.pointer-left {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 50% 50%);
+}
+
+.container .headline,
+.container-two .headline,
+.container-three .headline {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+.container .headline {
+  color: var(--font-main);
+  bottom: 5%;
+  /* right: 2%; */
+  left: 65%;
+}
+
+.container-two .headline {
+  color: var(--font-main);
+  top: calc(49.5% - 1.5rem );
+  left: 55%;
+}
+
+.container-three .headline {
+  color: var(--font-main);
+  top: calc(49.5% - 1.5rem);
+  right: 55%;
+  padding-left: 1rem;
+}

@@ -6,6 +6,7 @@
   --bg-secondary: rgb(94,134,35);
   --bg-white: white;
 
+
   /* font-colors */
   --font-main: rgb(245,210,8);
   --font-bg-main: rgb(55,125,189);
@@ -14,6 +15,8 @@
   /* box shodow */
   --box-shadow-main: 0 0 1rem rgba(0, 0, 0, 0.5); 
 }
+
+
 
 *{
   box-sizing: border-box;
@@ -87,11 +90,37 @@ html{
 }
 
 .container .headline {
-  color: var(--font-main);
+  --bg-size: 400%;
+  color: var(--font-white);
   bottom: 5%;
   /* right: 2%; */
   left: 65%;
+  background: linear-gradient( 
+                90deg,
+                var(--font-main),
+                var(--font-white),
+                var(--font-white),
+                var(--font-main)
+              ) 0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation-name: move;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
 }
+
+@keyframes move {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+
 
 .container-two .headline {
   color: var(--font-main);
@@ -105,3 +134,4 @@ html{
   right: 55%;
   padding-left: 1rem;
 }
+
